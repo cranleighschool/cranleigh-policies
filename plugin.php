@@ -165,9 +165,6 @@ class Cranleigh_Policies {
 	}
 	
 	
-	
-
-	
 	function required_plugins() {
 		/*
 		 * Array of plugin arrays. Required keys are name and slug.
