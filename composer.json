@@ -1,0 +1,15 @@
+{
+	"name": "fredbradley/cranleigh-policies",
+	"authors": [
+		{
+			"name": "Fred Bradley",
+			"email": "hello@fredbradley.co.uk"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"CranleighSchool\\Policies\\": "src"
+		}
+	},
+	"require": {}
+}
