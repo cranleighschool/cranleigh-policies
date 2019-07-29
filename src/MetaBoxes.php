@@ -41,7 +41,7 @@
 			$meta_boxes[] = array(
 				'id'         => 'policy_meta',
 				'title'      => 'Policy Data',
-				'post_types' => array($this->post_type_key),
+				'post_types' => array('policies'),
 				'context'    => 'normal',
 				'priority'   => 'high',
 				'autosave'   => true,
@@ -56,19 +56,6 @@
 
 				),
 
-				'validation' => array(
-					'rules'    => array(
-						"{$this->prefix}pdf" => array(
-							'required'  => true,
-						),
-					),
-					// optional override of default jquery.validate messages
-					'messages' => array(
-						"{$this->prefix}pdf" => array(
-							'required'  => __( 'There\'s not PDF uploaded? Are you wanting to add this policy or not?', 'cranleigh' ),
-						),
-					),
-				),
 			);
 
 			return $meta_boxes;
