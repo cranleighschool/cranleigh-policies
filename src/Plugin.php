@@ -25,6 +25,7 @@
 			add_filter('get_the_archive_title', array($this, 'filter_title'), 4);
 			new CustomPostType("policies");
 			new CustomTaxonomy("policies", "policy_type");
+			new MetaBoxes();
 		}
 
 		/**
