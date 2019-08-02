@@ -22,7 +22,7 @@
 		public function __construct(string $post_type_key)
 		{
 			$this->post_type_key = $post_type_key;
-			add_action('init', array($this, 'cpt_policies'), 0);
+			add_action('init', array($this, 'cpt_policies'));
 		}
 
 		/**
@@ -61,7 +61,7 @@
 
 			$args = array(
 				'label'               => __('Policy', 'cranleigh-2016'),
-				'description'         => __('The policies and information on these pages are subject to change due to annual reviews and changes in statutory guidance. If you have any questions, please contact the school. A copy of the policies on this page can also be obtained by contacting the <a href="mailto:reception@cranleigh.org">School Office</a>.', 'cranleigh'),
+				'description'         => __('The policies and information on these pages are subject to change due to annual reviews and changes in statutory guidance. If you have any questions, please contact the school. A copy of the policies on this page can also be obtained by contacting the <a href="mailto:reception@cranleigh.org">School Office</a>.', 'cranleigh-2016'),
 				'labels'              => $labels,
 				'supports'            => array('title'),
 				'hierarchical'        => false,
