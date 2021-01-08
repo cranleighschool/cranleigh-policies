@@ -24,7 +24,6 @@
 			$this->post_type_key = $post_type_key;
 			add_action('init', array($this, 'cpt_policies'), 0);
 			add_action('pre_get_posts', array($this, 'getAllPosts'), 99999); // We can force this because there's a post type check in the method
-
 		}
 
 		/**
@@ -63,7 +62,7 @@
 
 			$args = array(
 				'label'               => __('Policy', 'cranleigh-2016'),
-				'description'         => __('The policies and information on these pages are subject to change due to annual reviews and changes in statutory guidance. If you have any questions, please contact the school. A copy of the policies on this page can also be obtained by contacting the <a href="mailto:reception@cranleigh.org">School Office</a>.', 'cranleigh'),
+				'description'         => __('The policies and information on these pages are subject to change due to annual reviews and changes in statutory guidance. If you have any questions, please contact the school. A copy of the policies on this page can also be obtained by contacting the <a href="mailto:reception@cranleigh.org">School Office</a>.', 'cranleigh-2016'),
 				'labels'              => $labels,
 				'supports'            => array('title'),
 				'hierarchical'        => false,
