@@ -1,5 +1,5 @@
 <?php
-	
+
 	namespace CranleighSchool\Policies;
 
 	/**
@@ -23,6 +23,8 @@
 		{
 			$this->post_type_key = $post_type_key;
 			add_action('init', array($this, 'cpt_policies'), 0);
+			add_action('pre_get_posts', array($this, 'getAllPosts'), 99999); // We can force this because there's a post type check in the method
+
 		}
 
 		/**
@@ -81,5 +83,30 @@
 
 			register_post_type($this->post_type_key, $args);
 
+		}
+
+		/**
+		 * @param \WP_Query $query
+		 *
+		 * @return \WP_Query
+		 */
+		public function getAllPosts(\WP_Query $query): \WP_Query
+		{
+			if ($this->isArchiveAndMainQuery($query) && $query->is_admin === false) {
+				$query->set('posts_per_page', -1);
+				$query->set('orderby', 'title');
+				$query->set('order', 'ASC');
+			}
+
+			return $query;
+		}
+
+		private function isArchiveAndMainQuery(\WP_Query $query): bool
+		{
+			if (is_post_type_archive($this->post_type_key) && $query->is_main_query()) {
+				return true;
+			}
+
+			return false;
 		}
 	}
